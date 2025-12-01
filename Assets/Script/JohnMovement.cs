@@ -6,7 +6,7 @@ public class JohnMovement : MonoBehaviour
     public float JumpForce = 10;
     public float Speed;
     public float speedBullet = 10f;
-    public GameObject bullets;
+    public GameObject Bullet;
     private Rigidbody2D rb2D;
     private float horizontal;
     private Animator Animator;
@@ -55,7 +55,7 @@ public class JohnMovement : MonoBehaviour
         else direction = Vector2.left;
 
 
-            GameObject Bullets = Instantiate(bullets, transform.position + direction * 0.1f, Quaternion.identity);
+            GameObject Bullets = Instantiate(Bullet, transform.position + direction * 0.1f, Quaternion.identity);
             Bullets.GetComponent<Bullets>().SetDirection(direction);
     }
 

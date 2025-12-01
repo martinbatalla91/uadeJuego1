@@ -32,6 +32,7 @@ public class Bullets : MonoBehaviour
         Destroy(gameObject);
     }
 
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         JohnMovement John = collision.GetComponent<JohnMovement>();
@@ -46,6 +47,4 @@ public class Bullets : MonoBehaviour
         }
         DestroyBullet();
     }
-
-   
 }

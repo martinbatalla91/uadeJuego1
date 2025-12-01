@@ -3,7 +3,7 @@ using UnityEngine;
 public class Grunt : MonoBehaviour
 {
     public GameObject John;
-    public GameObject bullets;
+    public GameObject Bullet;
     private float LastShoot;
     private int Health = 3;
     private void Update()
@@ -29,7 +29,7 @@ public class Grunt : MonoBehaviour
         if (transform.localScale.x == 1.0f) direction = Vector2.right;
         else direction = Vector2.left;
 
-        GameObject Bullets = Instantiate(bullets, transform.position + direction * 0.1f, Quaternion.identity);
+        GameObject Bullets = Instantiate(Bullet, transform.position + direction * 0.1f, Quaternion.identity);
         Bullets.GetComponent<Bullets>().SetDirection(direction);
     }
 
