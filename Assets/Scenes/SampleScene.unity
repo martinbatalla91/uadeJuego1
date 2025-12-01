@@ -373,9 +373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbd27b2b4e3a284db85eeef8cd23715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 150
-  Speed: 1
-  BulletsPrefab: {fileID: 4797090709477310891, guid: bba1cb3c468e8a44ab40c03441b74864, type: 3}
+  JumpForce: 250
+  Speed: 10
+  speedBullet: 10
+  bullets: {fileID: 3493824727825077410, guid: 7fac0e26feb1e6a49b21000951ba5c12, type: 3}
 --- !u!95 &8992974
 Animator:
   serializedVersion: 7
@@ -982,7 +983,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_Sprite: {fileID: 8469475209945955884, guid: c4abf9239aba04d4c90dfe7dc50923f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1692,7 +1693,7 @@ GameObject:
   - component: {fileID: 644200740}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13965,7 +13966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_Sprite: {fileID: 8469475209945955884, guid: c4abf9239aba04d4c90dfe7dc50923f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14226,7 +14227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 8902897852430917854, guid: 51db6f4e9f4f59b4c9fad58306f016ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14437,7 +14438,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_Sprite: {fileID: 8469475209945955884, guid: c4abf9239aba04d4c90dfe7dc50923f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14524,7 +14525,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_Sprite: {fileID: 8469475209945955884, guid: c4abf9239aba04d4c90dfe7dc50923f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15133,7 +15134,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 8902897852430917854, guid: 51db6f4e9f4f59b4c9fad58306f016ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15307,7 +15308,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_Sprite: {fileID: 8469475209945955884, guid: c4abf9239aba04d4c90dfe7dc50923f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15596,7 +15597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   John: {fileID: 8992968}
-  BulletsPrefab: {fileID: 4797090709477310891, guid: bba1cb3c468e8a44ab40c03441b74864, type: 3}
+  bullets: {fileID: 0}
 --- !u!1 &1997926454
 GameObject:
   m_ObjectHideFlags: 0
@@ -15759,7 +15760,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 8902897852430917854, guid: 51db6f4e9f4f59b4c9fad58306f016ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15970,7 +15971,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 8902897852430917854, guid: 51db6f4e9f4f59b4c9fad58306f016ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class JohnMovement : MonoBehaviour
 {
-    public float JumpForce;
+    public float JumpForce = 10;
     public float Speed;
-    public GameObject BulletsPrefab;
+    public float speedBullet = 10f;
+    public GameObject bullets;
     private Rigidbody2D rb2D;
     private float horizontal;
-    private bool Grounded;
     private Animator Animator;
     private float LastShoot;
     private int Health;
@@ -24,25 +24,22 @@ public class JohnMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("horizontal");
+        //Movement
+        horizontal = Input.GetAxis("horizontal");
         if (horizontal < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
         else if (horizontal > 0.0f) transform.localScale = new Vector3(1.0f,1.0f,1.0f);
 
-            Animator.SetBool("running", horizontal != 0.0f);
+        Animator.SetBool("running", horizontal != 0.0f);
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
+        //jump
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            Grounded = true;
-        }
-        else Grounded = false;
-
-        if (Input.GetKeyDown(KeyCode.W) && Grounded)
-        {
-            Jump();
-   
+            Animator.SetBool("jump", true);
+            rb2D.AddForce(new Vector2(0,JumpForce));
+           
         }
 
+        //Shoot
         if (Input.GetKey(KeyCode.Space) && Time.time > LastShoot + 0.25f) 
         {
             Shoot();
@@ -50,29 +47,34 @@ public class JohnMovement : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        rb2D.AddForce(Vector2.up * JumpForce);
-    }
-
+   
     private void Shoot() 
     {
         Vector3 direction;
         if (transform.localScale.x == 1.0f) direction = Vector2.right;
         else direction = Vector2.left;
 
-            GameObject Bullets = Instantiate(BulletsPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+
+            GameObject Bullets = Instantiate(bullets, transform.position + direction * 0.1f, Quaternion.identity);
             Bullets.GetComponent<Bullets>().SetDirection(direction);
     }
 
     private void FixedUpdate()
     {
-        rb2D.linearVelocity = new Vector2(horizontal, rb2D.linearVelocity.y);
+        rb2D.linearVelocity = new Vector2(horizontal * Speed, rb2D.linearVelocity.y);
     }
 
     public void Hit() 
     {
         Health = Health - 1;
         if (Health == 0) Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground") 
+        {
+            Animator.SetBool("jump", false);
+        }
     }
 }
